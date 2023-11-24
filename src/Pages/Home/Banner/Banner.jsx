@@ -14,7 +14,7 @@ const Banner = () => {
                 spaceBetween={30}
                 centeredSlides={true}
                 autoplay={{
-                    delay: 2500,
+                    delay: 3000,
                     disableOnInteraction: false,
                 }}
                 pagination={{
@@ -22,12 +22,41 @@ const Banner = () => {
                 }}
                 navigation={true}
                 modules={[Autoplay, Pagination, Navigation]}
-                className="mySwiper"
+                className="mySwiper "
             >
-                <SwiperSlide>{slide1}</SwiperSlide>
-                <SwiperSlide>{slide2}</SwiperSlide>
-                <SwiperSlide>{slide3}</SwiperSlide>
-               
+                <SwiperSlide className=''>
+                    <div className="relative">
+                        <img src={slide1} alt="Slide 1" />
+                        <div className="space-y-6 w-3/4 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center">
+                            <h1 className="text-7xl font-bold uppercase">Begin Your Fitness Journey..!!</h1>
+                            <p className="text-2xl text-gray-200">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                            <button className='btn btn-md text-white bg-[#c500d4] hover:bg-transparent'>Explore more</button>
+                        </div>
+                    </div>
+                </SwiperSlide>
+                
+                <SwiperSlide>
+                <div className="relative">
+                        <img src={slide2} alt="Slide 1" />
+                        <div className="space-y-6 w-3/4 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center">
+                            <h1 className="text-7xl font-bold uppercase">Keep Health Fit For Every Moment..!!</h1>
+                            <p className="text-2xl text-gray-200">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                            <button className='btn btn-md text-white bg-[#c500d4] hover:bg-transparent'>Explore more</button>
+                        </div>
+                    </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                <div className="relative">
+                        <img src={slide3} alt="Slide 1" />
+                        <div className="space-y-6 w-3/4 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center">
+                            <h1 className="text-7xl font-bold uppercase">get body in shape & stay healthy..!!</h1>
+                            <p className="text-2xl text-gray-200">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                            <button className='btn btn-md text-white bg-[#c500d4] hover:bg-transparent'>Explore more</button>
+                        </div>
+                    </div>
+                </SwiperSlide>
+
             </Swiper>
         </>
     );

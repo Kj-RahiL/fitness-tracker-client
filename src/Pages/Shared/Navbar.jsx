@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Providres/AuthProviders";
 
 // import useCart from "../../hooks/useCart";
@@ -9,11 +9,56 @@ const Navbar = () => {
     // const [cart] = useCart()
     // console.log(user)
     const link = <>
-        <li><Link to='/'>Home</Link></li>
-        <li><Link to='/menu'>Gallery</Link></li>
-        <li><Link to='/order/salad'>Trainer</Link></li>
-        <li><Link to='/secret'>Dashboard</Link></li>
-        <li><Link to='/secret'>Community</Link></li>
+        <li><NavLink to="/"
+            style={({ isActive }) => {
+                return {
+                    color: isActive ? '#F4AF00' : '',
+                    borderBottom: isActive ? "2px solid #F4AF00" : "black",
+                    fontWeight: isActive ? "bold" : "",
+                    background: isActive ? "none" : '',
+                };
+            }}>Home</NavLink>
+        </li>
+        <li><NavLink to='/gallery'
+            style={({ isActive }) => {
+                return {
+                    color: isActive ? '#F4AF00' : '',
+                    borderBottom: isActive ? "2px solid #F4AF00" : "black",
+                    fontWeight: isActive ? "bold" : "",
+                    background: isActive ? "none" : '',
+                };
+            }}>Gallery</NavLink>
+        </li>
+        <li><NavLink to="/trainer"
+            style={({ isActive }) => {
+                return {
+                    color: isActive ? '#F4AF00' : '',
+                    borderBottom: isActive ? "2px solid #F4AF00" : "black",
+                    fontWeight: isActive ? "bold" : "",
+                    background: isActive ? "none" : '',
+                };
+            }}>Trainer</NavLink>
+        </li>
+        <li><NavLink to="/dashboard"
+            style={({ isActive }) => {
+                return {
+                    color: isActive ? '#F4AF00' : '',
+                    borderBottom: isActive ? "2px solid #F4AF00" : "black",
+                    fontWeight: isActive ? "bold" : "",
+                    background: isActive ? "none" : '',
+                };
+            }}>Dashboard</NavLink>
+        </li>
+        <li><NavLink to="/community"
+            style={({ isActive }) => {
+                return {
+                    color: isActive ? '#F4AF00' : '',
+                    borderBottom: isActive ? "2px solid #F4AF00" : "black",
+                    fontWeight: isActive ? "bold" : "",
+                    background: isActive ? "none" : '',
+                };
+            }}>Community</NavLink>
+        </li>
     </>
 
     const handleLogout = () => {
@@ -34,17 +79,17 @@ const Navbar = () => {
                         {link}
                     </ul>
                 </div>
-                <a className=" normal-case text-xl">FIT<span>TO</span>HIT </a>
+                <a className="text-[#F4AF00] uppercase font-extrabold tracking-wider text-2xl ">FIT<span className="text-white">TO</span>HIT </a>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
+                <ul className="menu menu-horizontal px-1 font-medium text-base">
                     {link}
                 </ul>
             </div>
             <div className="navbar-end">
                 {
                     user ? <Link onClick={handleLogout} to='/' className="btn btn-outline text-white">Logout</Link> :
-                        <Link to='/login' className="btn btn-outline text-white">Login</Link>
+                        <Link to='/login' className="btn px-5  rounded-2xl bg-[#F4AF00] text-white">Login</Link>
 
                 }
             </div>
