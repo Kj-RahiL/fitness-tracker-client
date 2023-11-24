@@ -1,37 +1,37 @@
 [
     {
       "id": 1,
-      "icon": "🏋️‍♂️",
+      "icon": "https://i.ibb.co/g65crfq/undraw-Personal-trainer-re-cnua.png",
       "title": "Strength Training",
       "description": "Build muscle and increase strength with weightlifting exercises."
     },
     {
       "id": 2,
-      "icon": "🚴‍♀️",
+      "icon": "https://i.ibb.co/ZMvB95w/undraw-personal-training-0dqn-1.png",
       "title": "Body Building",
       "description": "Improve cardiovascular health through activities like cycling, running, or swimming."
     },
     {
       "id": 3,
-      "icon": "🧘‍♂️",
+      "icon": "https://i.ibb.co/WzJPhZV/undraw-Yoga-re-i5ld.png",
       "title": "Yoga and Meditation",
       "description": "Enhance flexibility, balance, and mental well-being with yoga and meditation practices."
     },
     {
       "id": 4,
-      "icon": "🍏",
+      "icon": "https://i.ibb.co/zHqVTNZ/undraw-Healthy-lifestyle-re-ifwg.png",
       "title": "Nutrition Guidance",
       "description": "Get expert advice on a balanced diet to support your fitness goals."
     },
     {
       "id": 5,
-      "icon": "🏃‍♀️",
+      "icon": "https://i.ibb.co/PCsKGxs/undraw-fitness-stats-sht6.png",
       "title": "Running Challenges",
       "description": "Participate in running challenges to improve endurance and set personal records."
     },
     {
       "id": 6,
-      "icon": "💤",
+      "icon": "https://i.ibb.co/qkSqbHS/undraw-Pilates-ltw9.png",
       "title": "Recovery Strategies",
       "description": "Learn effective strategies for post-workout recovery and muscle relaxation."
     }
