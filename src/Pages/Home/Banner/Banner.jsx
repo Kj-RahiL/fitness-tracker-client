@@ -24,7 +24,7 @@ const Banner = () => {
                 modules={[Autoplay,Pagination, Navigation]}
                 className="mySwiper "
             >
-                <SwiperSlide className=''>
+                <SwiperSlide>
                     <div className="hero relative">
                         <img src={slide1} alt="Slide 1" />
                         <div className="hero-overlay bg-[#000000] bg-opacity-30"></div>

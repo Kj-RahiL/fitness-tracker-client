@@ -9,7 +9,7 @@ const Featured = () => {
             .then(res => res.json())
             .then(data => setItems(data))
     }, [])
-    console.log(items)
+    // console.log(items)
     return (
         <div className="py-20 bg-cover" style={{ backgroundImage: `url(${background})`}}>
             <h2 className="text-5xl text-center font-bold text-white mb-16">Awesome Features</h2>
