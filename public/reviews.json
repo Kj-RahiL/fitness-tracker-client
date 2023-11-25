@@ -1,0 +1,37 @@
+[
+    {
+        "id": "1",
+        "name": "Jane Doe",
+        "title": "Recreational climber",
+        "details": "I have never looked forward to a workout class before, your but this one I can’t wait to get to! Darren is great and music amazing!.",
+        "rating": 3
+    },
+    {
+        "id": "2",
+        "name": "John Doe",
+        "title": "Personal Workout",
+        "details": "I feel so fortunate to have worked with incredible experts in the fields of health, mindfulness and training, so I thought, ‘Why not share that?’ ",
+        "rating": 2
+    },
+    {
+        "id": "3",
+        "name": "MJ Doe",
+        "title": "Primary teacher",
+        "details": "We’ll start small then build, giving your body a to really what you’re doing,” says Sylvia. “Each class will be exciting, always moving you forward.",
+        "rating": 5
+    },
+    {
+        "id": "4",
+        "name": "Sarah Smith",
+        "title": "Web Designer",
+        "details": "I found the product to be incredibly useful and easy to use. The interface is intuitive, and it has all the features I need. Highly recommend it!",
+        "rating": 4
+    },
+    {
+        "id": "5",
+        "name": "Robert Johnson",
+        "title": "Personal Workout",
+        "details": "This is by far the best service I have ever used. The customer support is outstanding, and the product itself is top-notch. I couldn't be happier!",
+        "rating": 5
+    }
+]
