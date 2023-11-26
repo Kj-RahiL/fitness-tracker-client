@@ -39,6 +39,16 @@ const Navbar = () => {
                 };
             }}>Trainer</NavLink>
         </li>
+        <li><NavLink to="/classes"
+            style={({ isActive }) => {
+                return {
+                    color: isActive ? '#F4AF00' : '',
+                    borderBottom: isActive ? "2px solid #F4AF00" : "black",
+                    fontWeight: isActive ? "bold" : "",
+                    background: isActive ? "none" : '',
+                };
+            }}>Classes</NavLink>
+        </li>
         <li><NavLink to="/dashboard"
             style={({ isActive }) => {
                 return {

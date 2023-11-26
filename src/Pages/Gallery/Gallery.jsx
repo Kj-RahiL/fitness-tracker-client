@@ -48,7 +48,7 @@ const Gallery = () => {
                             articles.map((article, idx) => {
                                 return (
                                     <div key={idx} className="card bg-black text-white shadow-md shadow-amber-500 relative overflow-hidden">
-                                        <figure className="h-[576px]">
+                                        <figure className="h-[430px]">
                                             <img src={article.image} alt="Shoes" className="rounded-xl h-full" />
                                         </figure>
                                         <div className="card-body items-center text-center absolute top-0 left-0 w-full h-full pt-14 bg-opacity-50 bg-black opacity-0 hover:opacity-100 transition-opacity duration-300">

@@ -5,6 +5,9 @@ import Gallery from "../Pages/Gallery/Gallery";
 import Trainer from "../Pages/Trainer/Trainer";
 import Dashboard from "../Pages/Dashboard/Dashboard";
 import Community from "../Pages/Community/Community";
+import Classes from "../Pages/Classes/Classes";
+import SignUp from "../Pages/Register/SignUp";
+import Login from "../Pages/Register/Login";
 
 const router = createBrowserRouter([
     {
@@ -24,6 +27,10 @@ const router = createBrowserRouter([
                 element: <Trainer></Trainer>
             },
             {
+                path: 'classes',
+                element: <Classes></Classes>
+            },
+            {
                 path: 'dashboard',
                 element: <Dashboard></Dashboard>
             },
@@ -33,6 +40,14 @@ const router = createBrowserRouter([
             },
         ]
     },
+    {
+        path:'/login',
+        element:<Login></Login>
+    },
+    {
+        path:'/signUp',
+        element:<SignUp></SignUp>
+    }
 ]);
 
 export default router;
