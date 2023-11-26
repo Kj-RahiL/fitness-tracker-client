@@ -1,4 +1,3 @@
-
 import Swal from 'sweetalert2';
 import bgLogin from '../../assets/Home/mesh-814.png'
 import SocialLogIn from '../../Components/Shared/SocialLogIn';
@@ -6,6 +5,9 @@ import useAuth from '../../Hooks/useAuth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import loginAni from '../../assets/register/Animation - 1701011933091.json'
 import Lottie from 'lottie-react';
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
+
 const Login = () => {
     const { signIn } = useAuth();
     const navigate = useNavigate();
@@ -15,7 +17,7 @@ const Login = () => {
     // console.log('state in the location login page', location.state)
 
 
-    const handleLogin = e=> {
+    const handleLogin = e => {
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
@@ -25,18 +27,18 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                Swal.fire({
-                    title: 'User Login Successful.',
-                    showClass: {
-                        popup: 'animate__animated animate__fadeInDown'
-                    },
-                    hideClass: {
-                        popup: 'animate__animated animate__fadeOutUp'
-                    }
-                });
+                form.reset()
+                toast.success('User Login Successful.!!',{
+                    position: 'top-center',
+                    autoClose: 3000
+                })
                 navigate(from, { replace: true });
             })
-            .catch(error=>console.error(error))
+            .catch(error => {
+                console.log(error)
+                toast.error("Invalid username or password. Please try again.!!")
+                form.reset()
+            })
     }
 
     const boxStyle = {

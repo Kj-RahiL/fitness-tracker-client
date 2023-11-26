@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Providres/AuthProviders";
+import { toast } from "react-toastify";
+import avatar from '../../assets/register/icons8-avatar-48.png'
 
 // import useCart from "../../hooks/useCart";
 
@@ -74,9 +76,12 @@ const Navbar = () => {
     const handleLogout = () => {
         logOut()
             .then(() => {
-                console.log('logout successfully')
+                toast.success('logout successfully')
             })
-            .catch(error => console.error(error))
+            .catch(error => {
+                console.error(error)
+                toast.error('LogOut Failed.!!')
+            })
     }
     return (
         <div className="navbar fixed z-10 bg-black bg-opacity-30 text-white max-w-screen-xl mx-auto">
@@ -97,8 +102,19 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
+                
                 {
-                    user ? <Link onClick={handleLogout} to='/' className="btn btn-outline text-white">Logout</Link> :
+                    user ?
+                        <div className="dropdown dropdown-end">
+                            <label tabIndex={0} className="btn btn-ghost rounded-btn">
+                                <img className="w-8 rounded-full" src={user?.photoURL || avatar} alt="" />
+                            </label>
+                            <ul tabIndex={0} className="menu dropdown-content z-[1] p-4 shadow border-2 text-white bg-blend-overlay rounded-box mt-4">
+                                <li><h2 className="text-sm font-light hover:bg-[#F4AF00] ">{user?.displayName} </h2></li>
+                                <li><button onClick={handleLogout} className="btn btn-ghost hover:bg-[#F4AF00] normal-case font-semibold">SignOut</button></li>
+                            </ul>
+                        </div> :
+
                         <Link to='/login' className="btn px-5  rounded-2xl bg-[#F4AF00] text-white">Login</Link>
 
                 }

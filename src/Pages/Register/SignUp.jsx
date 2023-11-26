@@ -7,6 +7,7 @@ import useAxiosPublic from '../../Hooks/useAxiosPublic';
 import SocialLogIn from '../../Components/Shared/SocialLogIn';
 import loginAni from '../../assets/register/Animation - 1701011933091.json'
 import Lottie from 'lottie-react';
+import { toast } from 'react-toastify';
 
 
 const SignUp = () => {
@@ -21,31 +22,26 @@ const SignUp = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
-                // updateUserProfile(data.name, data.photoURL)
-                //     .then(() => {
-                //         const userInfo = {
-                //             name: data.name,
-                //             email: data.email
-                //         }
-                //         axiosPublic.post('/users', userInfo)
-                //             .then(res => {
-                //                 if (res.data.insertedId) {
-                //                     console.log('user add database')
-                //                     reset();
-                //                     Swal.fire({
-                //                         position: 'top-end',
-                //                         icon: 'success',
-                //                         title: 'User created successfully.',
-                //                         showConfirmButton: false,
-                //                         timer: 1500
-                //                     });
-                //                     navigate('/');
-                //                 }
-                //             })
+                updateUserProfile(data.name, data.photoURL)
+                    .then(() => {
+                        const userInfo = {
+                            name: data.name,
+                            email: data.email,
+                            photo: data.photoURL
+                        }
+                        axiosPublic.post('/users', userInfo)
+                            .then(res => {
+                                if (res.data.insertedId) {
+                                    console.log('user add database')
+                                    reset();
+                                    toast.success('sign up success!!')
+                                    navigate('/');
+                                }
+                            })
 
-
-                //     })
-                //     .catch(error => console.log(error))
+console.log(userInfo)
+                    })
+                    .catch(error => console.log(error))
             })
     };
 
