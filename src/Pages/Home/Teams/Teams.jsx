@@ -37,12 +37,13 @@ const Teams = () => {
                             <figure className="h-[576px]">
                                 <img src={item.image} alt="Shoes" className="rounded-xl h-full" />
                             </figure>
-                            <div className="card-body items-center text-center absolute top-0 left-0 w-full h-full pt-14 bg-opacity-50 bg-black opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            <div className="card-body items-center text-center absolute top-1/2 left-0 w-full h-full pt-14 bg-opacity-50 bg-black opacity-0 hover:opacity-100 transition-opacity duration-300">
                                 <h3>{item.name}</h3>
-                                <h2 className="card-title text-2xl font-bold">{item.title}</h2>
+                                <h2 className="card-title text-2xl font-bold">{item.category}</h2>
                                 <div className='flex text-4xl gap-10 mt-5'>
-                                    <Link to={item.socialLinks.facebook}><FaFacebook className='text-blue-500 bg-white rounded-full'></FaFacebook></Link>
-                                    <FaTwitter className='text-blue-500'></FaTwitter>
+                                    <Link to={item.socialIcons.facebook}><FaFacebook className='text-blue-500 bg-white rounded-full'></FaFacebook></Link>
+                                    <Link to={item.socialIcons.twitter}><FaTwitter className='text-blue-500'></FaTwitter></Link>
+                                    
                                 </div>
                             </div>
                         </div>

@@ -3,51 +3,82 @@
       "id": 1,
       "name": "John Doe",
       "image": "https://i.ibb.co/bdbsDkb/nathan-dumlao-NXMZxyg-Mw8o-unsplash.jpg",
-      "title": "Certified Personal Trainer",
-      "socialLinks": {
-        "facebook": "https://www.facebook.com/kj.rahil",
-        "twitter": "https://twitter.com/johndoe"
-      }
+      "category": "Certified Personal Trainer",
+      "experienceYears": 5,
+      "socialIcons": {
+        "facebook": "url_to_facebook_profile",
+        "twitter": "url_to_twitter_profile",
+        "instagram": "url_to_instagram_profile"
+      },
+      "availableTimeSlot": "Monday and Wednesday, 9:00 AM - 12:00 PM"
     },
     {
       "id": 2,
       "name": "Jane Smith",
       "image": "https://i.ibb.co/hMJFJjC/samuel-girven-4sh-R8q-NZ1-E0-unsplash.jpg",
-      "title": "Fitness Coach",
-      "socialLinks": {
-        "instagram": "https://www.instagram.com/janesmith/",
-        "facebook": "https://www.facebook.com/kj.rahil"
-      }
+      "category": "Fitness Coach",
+      "experienceYears": 8,
+      "socialIcons": {
+        "facebook": "url_to_facebook_profile",
+        "twitter": "url_to_twitter_profile",
+        "instagram": "url_to_instagram_profile"
+      },
+      "availableTimeSlot": "Tuesday and Thursday, 2:00 PM - 5:00 PM"
     },
     {
       "id": 3,
       "name": "Mike Johnson",
       "image": "https://i.ibb.co/NCx3XKj/dollar-gill-f9-W9svq-Hp-SU-unsplash.jpg",
-      "title": "Strength and Conditioning Specialist",
-      "socialLinks": {
-        "twitter": "https://twitter.com/mikejohnson",
-        "linkedin": "https://www.linkedin.com/in/mikejohnson/"
-      }
+      "category": "Strength Specialist",
+      "experienceYears": 10,
+      "socialIcons": {
+        "facebook": "url_to_facebook_profile",
+        "twitter": "url_to_twitter_profile",
+        "instagram": "url_to_instagram_profile"
+      },
+      "availableTimeSlot": "Monday and Friday, 10:00 AM - 1:00 PM"
     },
     {
       "id": 4,
       "name": "Emily Davis",
       "image": "https://i.ibb.co/BT90YW2/gurpreet-singh-f5st1-Fh-Lymc-unsplash.jpg",
-      "title": "Yoga & Meditation Instructor",
-      "socialLinks": {
-        "instagram": "https://www.instagram.com/emilydavis/",
-        "youtube": "https://www.youtube.com/user/emilydavisyoga"
-      }
+      "category": "Yoga & Meditation Instructor",
+      "socialIcons": {
+        "facebook": "url_to_facebook_profile",
+        "twitter": "url_to_twitter_profile",
+        "instagram": "url_to_instagram_profile"
+      },
+      "availableTimeSlot": "Wednesday and Saturday, 3:00 PM - 6:00 PM"
     },
     {
       "id": 5,
       "name": "Alex Carter",
       "image": "https://i.ibb.co/Mf6TpH1/total-shape-w-XBK9-Jr-M0i-U-unsplash.jpg",
-      "title": "Nutritionist and Personal Trainer",
-      "socialLinks": {
-        "facebook": "https://www.facebook.com/kj.rahil",
-        "linkedin": "https://www.linkedin.com/in/alexcarter/"
-      }
+      "category": "Nutritionist and Personal Trainer",
+      "experienceYears": 12,
+      "socialIcons": {
+        "facebook": "url_to_facebook_profile",
+        "twitter": "url_to_twitter_profile",
+        "instagram": "url_to_instagram_profile"
+      },
+      "availableTimeSlot": "Tuesday and Sunday, 11:00 AM - 2:00 PM"
+    },
+    {
+      "id": 6,
+      "name": "Sara Wilson",
+      "profileImage": "url_to_sara_wilson_image.jpg",
+      "category": "Conditioning Specialist",
+      "experienceYears": 7,
+      "socialIcons": {
+        "facebook": "url_to_facebook_profile",
+        "twitter": "url_to_twitter_profile",
+        "instagram": "url_to_instagram_profile"
+      },
+      "availableTimeSlot": "Thursday and Sunday, 1:00 PM - 4:00 PM"
     }
   ]
+
+
+
+  
   
