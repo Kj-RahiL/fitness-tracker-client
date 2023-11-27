@@ -1,5 +1,5 @@
 
-const Community = () => {
+const Forums = () => {
     return (
         <div>
             <h2>Community section</h2>
@@ -7,4 +7,4 @@ const Community = () => {
     );
 };
 
-export default Community;
+export default Forums;

@@ -38,8 +38,6 @@ const SignUp = () => {
                                     navigate('/');
                                 }
                             })
-
-console.log(userInfo)
                     })
                     .catch(error => console.log(error))
             })
@@ -53,7 +51,7 @@ console.log(userInfo)
         <div className="hero min-h-screen bg-base-200 bg-cover" style={{ background: `url(${bgLogin})`, backgroundSize: 'cover', }}>
             <div className="hero-content flex-col lg:flex-row m-8 md:m-20" style={{ ...boxStyle, background: `url(${bgLogin})` }}>
                 <div className="text-center md:text-left hidden sm:block">
-                <Lottie animationData={loginAni}></Lottie>
+                    <Lottie animationData={loginAni}></Lottie>
 
                 </div>
                 <div className=" flex-shrink-0 w-full max-w-sm">

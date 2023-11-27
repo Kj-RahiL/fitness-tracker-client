@@ -1,10 +1,24 @@
 import { useForm } from 'react-hook-form';
 import image from '../../../assets/Home/newsteller.jpg'
+import useAxiosPublic from '../../../Hooks/useAxiosPublic';
+import { toast } from 'react-toastify';
 const Newsletter = () => {
     const { register, handleSubmit , reset} = useForm()
+    const axiosPublic = useAxiosPublic()
     const onSubmit = async(data) => {
-        console.log(data)
-        reset()
+        const subscriber = {
+            name: data.name,
+            email: data.email
+        }
+        console.log(subscriber)
+        axiosPublic.post('/subscribe', subscriber)
+        .then(res => {
+            if (res.data.insertedId) {
+                console.log('subscribe add database')
+                reset();
+                toast.success('Newsletter Subscribed.!!')
+            }
+        })
     }
     return (
         <div className="bg-neutral-950 py-20">
@@ -24,7 +38,7 @@ const Newsletter = () => {
                         </label>
                         <input type="email" {...register("email", { required: true })} name="email" placeholder="Your Email" className="input input-bordered" />
                     </div>
-                    <button className='btn btn-outline'>Subscribe</button>
+                    <button className='btn btn-outline text-[#F4AF00]'>Subscribe</button>
                 </form>
             </div>
         </div>
