@@ -30,7 +30,7 @@ const Login = () => {
                 form.reset()
                 toast.success('User Login Successful.!!',{
                     position: 'top-center',
-                    autoClose: 3000
+                    autoClose: 1500
                 })
                 navigate(from, { replace: true });
             })
@@ -58,13 +58,13 @@ const Login = () => {
                             <label className="label">
                                 <span className="label-text text-white">Email</span>
                             </label>
-                            <input type="email" name="email" placeholder="email" className="input input-bordered" required />
+                            <input type="email" name="email" placeholder="email" className="input input-bordered text-black" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text text-white">Password</span>
                             </label>
-                            <input type="password" name="password" placeholder="password" className="input input-bordered" required />
+                            <input type="password" name="password" placeholder="password" className="input input-bordered text-black" required />
                             <label className="label">
                                 <a href="#" className="text-[#F4AF00] label-text-alt link link-hover">Forgot password?</a>
                             </label>

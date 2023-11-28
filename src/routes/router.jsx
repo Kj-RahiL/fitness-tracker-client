@@ -95,7 +95,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'balance',
-                element:<AdminRoute></AdminRoute>
+                element:<AdminRoute><Balance></Balance></AdminRoute>
             },
 
             // admin and trainer common route

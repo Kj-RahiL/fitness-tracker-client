@@ -8,6 +8,7 @@ import avatar from '../../assets/register/icons8-avatar-48.png'
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext)
+    console.log(user)
     // const [cart] = useCart()
     // console.log(user)
     const link = <>
@@ -102,15 +103,15 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                
+
                 {
                     user ?
-                        <div className="dropdown dropdown-end">
-                            <label tabIndex={0} className="btn btn-ghost rounded-btn">
-                                <img className="w-8 rounded-full" src={user?.photoURL || avatar} alt="" />
+                        <div className="dropdown dropdown-end flex">
+                            <h2 className="text-base font-light px-4 py-1 hover:bg-[#F4AF00] mr-5">{user?.displayName} </h2>
+                            <label tabIndex={0} className=" rounded-btn">
+                                <img className="w-8 rounded-full border-2" src={user?.photoURL || avatar} alt="" />
                             </label>
                             <ul tabIndex={0} className="menu dropdown-content z-[1] p-4 shadow border-2 text-white bg-blend-overlay rounded-box mt-4">
-                                <li><h2 className="text-sm font-light hover:bg-[#F4AF00] ">{user?.displayName} </h2></li>
                                 <li><button onClick={handleLogout} className="btn btn-ghost hover:bg-[#F4AF00] normal-case font-semibold">SignOut</button></li>
                             </ul>
                         </div> :

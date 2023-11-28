@@ -4,6 +4,7 @@ import useAuth from "../../../Hooks/useAuth";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import { useLoaderData } from "react-router-dom";
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_API
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
@@ -13,7 +14,7 @@ const BeTrainer = () => {
     const { register, handleSubmit, reset } = useForm()
     const axiosPublic = useAxiosPublic()
     const axiosSecure = useAxiosSecure()
-    
+
     const onSubmit = async (data) => {
         const imageFile = { image: data.image[0] }
         const res = await axiosPublic.post(image_hosting_api, imageFile, {
@@ -33,14 +34,14 @@ const BeTrainer = () => {
                 availableWeek: data.availableWeek,
                 availableDay: data.availableDay,
             }
-            const trainer = await axiosSecure.post('/trainer', trainerItem)
+            const trainer = await axiosSecure.post('/beTrainer', trainerItem)
             console.log(trainer)
             if (trainer.data.insertedId) {
                 reset()
                 Swal.fire({
-                    position: "top-end",
+                    position: "center-start",
                     icon: "success",
-                    title: `${data.name} is Completed applied in the trainer .`,
+                    title: `Completed applied for trainer .`,
                     showConfirmButton: false,
                     timer: 1500
                 });
@@ -106,7 +107,7 @@ const BeTrainer = () => {
 
                     {/* skills and profile experience row */}
                     <div className="md:flex mb-8">
-                        <div className="form-control w-full mb-8">
+                        <div className="form-control w-1/2 mb-8">
                             <label className="label">
                                 <span className="label-text text-xl font-medium text-[#63433f]">Skills</span>
                             </label>
