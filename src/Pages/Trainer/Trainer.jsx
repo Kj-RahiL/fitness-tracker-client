@@ -1,13 +1,11 @@
 import { Helmet } from "react-helmet-async";
 import Cover from "../../Components/Shared/Cover";
-import { useEffect, useState } from "react";
 
 import background from '../../assets/Home/mesh-814.png'
 import TrainerCard from "./TrainerCard";
 import beTrainerImage from '../../assets/trainer/team-1.jpg'
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import OurPlans from "../Dashboard/Trainer/OurPlans";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
 
@@ -49,8 +47,6 @@ const Trainer = () => {
                 </div>
             </div>
 
-            {/* booked trainer */}
-            <OurPlans></OurPlans>
         </div>
     );
 };

@@ -22,11 +22,13 @@ import ProfileSettings from "../Pages/Dashboard/Users/ProfileSettings";
 import RecommendedClass from "../Pages/Dashboard/Users/RecommendedClass";
 import AvailableTrainer from "../Pages/Trainer/availableTrainer/AvailableTrainer";
 import BookedPrice from "../Pages/Trainer/availableTrainer/BookedPrice";
+import ErrorElement from "../Pages/ErrorElement/ErrorELement";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Main></Main>,
+        errorElement:<ErrorElement></ErrorElement>,
         children: [
             {
                 path: '/',
@@ -74,6 +76,7 @@ const router = createBrowserRouter([
     {
         path: '/dashboard',
         element: <Dashboard></Dashboard>,
+        errorElement:<ErrorElement></ErrorElement>,
         children:[
             // admin route
             {

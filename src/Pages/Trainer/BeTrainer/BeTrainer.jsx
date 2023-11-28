@@ -26,6 +26,8 @@ const BeTrainer = () => {
         //         email: data.email,
         //         age: parseFloat(data.age),
         //         image: res.data.data.display_url,
+        //         skills: data.skills,
+        //         experienceYears: data.experience
         //         availableWeek: data.availableWeek,
         //         availableDay: data.availableDay,
         //     }
@@ -100,19 +102,31 @@ const BeTrainer = () => {
                         </div>
                     </div>
 
-                    {/* skills */}
-                    <div className="form-control w-full mb-8">
-                        <label className="label">
-                            <span className="label-text text-xl font-medium text-[#63433f]">Skills</span>
-                        </label>
-                        <label>
-                            <select {...register('skills', { required: true })} className="select-bordered w-full max-w-xs" multiple>
-                                <option value="javascript">JavaScript</option>
-                                <option value="react">React</option>
-                                <option value="nodejs">Node.js</option>
-                            </select>
-                        </label>
+                    {/* skills and profile experience row */}
+                    <div className="md:flex mb-8">
+                        <div className="form-control w-full mb-8">
+                            <label className="label">
+                                <span className="label-text text-xl font-medium text-[#63433f]">Skills</span>
+                            </label>
+                            <label>
+                                <select {...register('skills', { required: true })} className="select-bordered w-full max-w-xs" multiple>
+                                    <option value="javascript">JavaScript</option>
+                                    <option value="react">React</option>
+                                    <option value="nodejs">Node.js</option>
+                                </select>
+                            </label>
+                        </div>
+
+                        <div className="form-control md:w-1/2 md:ml-4">
+                            <label className="label">
+                                <span className="label-text text-xl font-medium text-[#63433f]">Experience</span>
+                            </label>
+                            <label className="input-group w-full">
+                                <input type="text" {...register("experience", { required: true })} className="input input-bordered w-full " />
+                            </label>
+                        </div>
                     </div>
+
 
                     {/* available time week and day */}
                     <div className="md:flex mb-8 ">

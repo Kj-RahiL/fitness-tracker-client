@@ -1,6 +1,5 @@
 import { Link, useLoaderData } from "react-router-dom";
 import Title from "../../../Components/Shared/Title";
-import { FaFacebook, FaTwitter } from "react-icons/fa";
 
 const AvailableTrainer = () => {
     const item = useLoaderData()
