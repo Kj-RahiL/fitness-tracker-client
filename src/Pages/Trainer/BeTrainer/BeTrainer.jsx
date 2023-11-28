@@ -3,6 +3,7 @@ import Cover from "../../../Components/Shared/Cover";
 import useAuth from "../../../Hooks/useAuth";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_API
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
@@ -11,40 +12,41 @@ const BeTrainer = () => {
     const { user } = useAuth()
     const { register, handleSubmit, reset } = useForm()
     const axiosPublic = useAxiosPublic()
-    // const axiosSecure = useAxiosSecure()
+    const axiosSecure = useAxiosSecure()
+    
     const onSubmit = async (data) => {
-        // const imageFile = { image: data.image[0] }
-        // const res = await axiosPublic.post(image_hosting_api, imageFile, {
-        //     headers: {
-        //         'content-type': 'multipart/form-data'
-        //     }
-        // });
+        const imageFile = { image: data.image[0] }
+        const res = await axiosPublic.post(image_hosting_api, imageFile, {
+            headers: {
+                'content-type': 'multipart/form-data'
+            }
+        });
         console.log(data)
-        // if (res.data.success) {
-        //     const menuItem = {
-        //         name: data.name,
-        //         email: data.email,
-        //         age: parseFloat(data.age),
-        //         image: res.data.data.display_url,
-        //         skills: data.skills,
-        //         experienceYears: data.experience
-        //         availableWeek: data.availableWeek,
-        //         availableDay: data.availableDay,
-        //     }
-        //     const menuRes = await axiosSecure.post('/menu', menuItem)
-        //     console.log(menuRes.data)
-        //     if (menuRes.data.insertedId) {
-        //         reset()
-        //         Swal.fire({
-        //             position: "top-end",
-        //             icon: "success",
-        //             title: `${data.name} is added to the menu.`,
-        //             showConfirmButton: false,
-        //             timer: 1500
-        //         });
-        //     }
-        // }
-        // console.log('with image url', res.data);
+        if (res.data.success) {
+            const trainerItem = {
+                name: data.name,
+                email: data.email,
+                age: parseFloat(data.age),
+                image: res.data.data.display_url,
+                category: data.skills,
+                experienceYears: data.experience,
+                availableWeek: data.availableWeek,
+                availableDay: data.availableDay,
+            }
+            const trainer = await axiosSecure.post('/trainer', trainerItem)
+            console.log(trainer)
+            if (trainer.data.insertedId) {
+                reset()
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: `${data.name} is Completed applied in the trainer .`,
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }
+        }
+        console.log('with image url', res.data);
     }
     return (
         <div>
@@ -109,10 +111,12 @@ const BeTrainer = () => {
                                 <span className="label-text text-xl font-medium text-[#63433f]">Skills</span>
                             </label>
                             <label>
-                                <select {...register('skills', { required: true })} className="select-bordered w-full max-w-xs" multiple>
-                                    <option value="javascript">JavaScript</option>
-                                    <option value="react">React</option>
-                                    <option value="nodejs">Node.js</option>
+                                <select defaultValue="default" {...register('skills', { required: true })} className="select select-bordered w-full max-w-xs">
+                                    <option disabled value='default'>Select Skills Category</option>
+                                    <option value="Yoga & Meditation">Yoga & Meditation</option>
+                                    <option value="Nutritionist">Nutritionist</option>
+                                    <option value="Fitness">Fitness</option>
+                                    <option value="Strength">Strength</option>
                                 </select>
                             </label>
                         </div>
@@ -136,7 +140,7 @@ const BeTrainer = () => {
                             </label>
                             <label className="input-group">
                                 <input type="text"
-                                    {...register("availAble week", { required: true })}
+                                    {...register("availableWeek", { required: true })}
                                     placeholder=" sunday, monday"
                                     className="input input-bordered w-full" />
                             </label>

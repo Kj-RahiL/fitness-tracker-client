@@ -3,11 +3,12 @@ import { GiBodyBalance } from "react-icons/gi";
 import { MdAddChart, MdClass, MdGroup, MdManageAccounts, MdSettings, MdUnsubscribe } from "react-icons/md";
 import { RxActivityLog } from "react-icons/rx";
 import { NavLink, Outlet } from "react-router-dom";
+import UseAdmin from "../hooks/useAdmin";
 
 
 const Dashboard = () => {
     // const [isAdmin] = UseAdmin()
-    const isAdmin = true;
+    const [isAdmin] = UseAdmin();
     const isTrainer = false
     return (
         <div className="flex">

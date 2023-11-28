@@ -10,7 +10,7 @@ const AvailableTrainer = () => {
             <Title title='Available Trainer'></Title>
             <div className="my-20">
                 <div className="card w-full bg-black text-white shadow-md shadow-amber-500 flex-col lg:flex-row">
-                    <figure className="h-[300px]"><img className="h-full w-full" src={image} alt="Shoes" /></figure>
+                    <figure className="h-[520px]"><img className="h-full w-full" src={image} alt="Shoes" /></figure>
                     <div className="ml-20">
                         <h2 className="text-4xl font-bold uppercase text-center">Available Time Slot</h2>
                         <div className="overflow-x-auto w-full ml-10">
@@ -45,8 +45,8 @@ const AvailableTrainer = () => {
                                         <td>10:00 Am - 11:00 am</td>
                                         <td>{name}</td>
                                         <td>
-                                            <Link to='bookedTrainer'>
-                                                <button>Join Now</button>
+                                            <Link to='bookedPrice'>
+                                                <button className="btn btn-outline bg-amber-700 text-white">Join Now</button>
                                             </Link>
                                         </td>
                                     </tr>
@@ -57,8 +57,8 @@ const AvailableTrainer = () => {
                                         <td>3:00 Pm - 4:00 Am</td>
                                         <td>{name}</td>
                                         <td>
-                                            <Link to='bookedTrainer'>
-                                                <button>Join Now</button>
+                                            <Link to='bookedPrice'>
+                                                <button className="btn btn-outline bg-amber-700 text-white">Join Now</button>
                                             </Link>
                                         </td>
                                     </tr>
@@ -69,8 +69,8 @@ const AvailableTrainer = () => {
                                         <td>5:00 Pm - 6:00 Pm</td>
                                         <td>{name}</td>
                                         <td>
-                                            <Link to='bookedTrainer'>
-                                                <button>Join Now</button>
+                                            <Link to='bookedPrice'>
+                                                <button className="btn btn-outline bg-amber-700 text-white">Join Now</button>
                                             </Link>
                                         </td>
                                     </tr>
@@ -81,8 +81,8 @@ const AvailableTrainer = () => {
                                         <td>6:00 Pm - 7:00 Pm</td>
                                         <td>{name}</td>
                                         <td>
-                                            <Link to='bookedTrainer'>
-                                                <button>Join Now</button>
+                                            <Link to='bookedPrice'>
+                                                <button className="btn btn-outline bg-amber-700 text-white">Join Now</button>
                                             </Link>
                                         </td>
                                     </tr>
@@ -93,8 +93,8 @@ const AvailableTrainer = () => {
                                         <td>7:00 pm - 8:00 Pmm</td>
                                         <td>{name}</td>
                                         <td>
-                                            <Link to='bookedTrainer'>
-                                                <button>Join Now</button>
+                                            <Link to='bookedPrice'>
+                                                <button className="btn btn-outline bg-amber-700 text-white">Join Now</button>
                                             </Link>
                                         </td>
                                     </tr>

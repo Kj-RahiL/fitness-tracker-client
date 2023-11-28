@@ -23,6 +23,8 @@ import RecommendedClass from "../Pages/Dashboard/Users/RecommendedClass";
 import AvailableTrainer from "../Pages/Trainer/availableTrainer/AvailableTrainer";
 import BookedPrice from "../Pages/Trainer/availableTrainer/BookedPrice";
 import ErrorElement from "../Pages/ErrorElement/ErrorELement";
+import PrivateRoute from "./PrivateRoute";
+import AdminRoute from "./AdminRoute";
 
 const router = createBrowserRouter([
     {
@@ -44,16 +46,16 @@ const router = createBrowserRouter([
             },
             {
                 path: 'trainer/beTrainer',
-                element: <BeTrainer></BeTrainer>
+                element: <PrivateRoute><BeTrainer></BeTrainer></PrivateRoute>
             },
             {
                 path: 'trainer/availableTrainer/:id',
-                element: <AvailableTrainer></AvailableTrainer>,
+                element: <PrivateRoute><AvailableTrainer></AvailableTrainer></PrivateRoute>,
                 loader: ({params})=> fetch(`http://localhost:5000/trainer/${params.id}`)
             },
             {
                 path: 'trainer/availableTrainer/:id/bookedPrice',
-                element: <BookedPrice></BookedPrice>
+                element: <PrivateRoute><BookedPrice></BookedPrice></PrivateRoute>
             },
             {
                 path: 'classes',
@@ -81,19 +83,19 @@ const router = createBrowserRouter([
             // admin route
             {
                 path:'subscribers',
-                element:<AllSubscribers></AllSubscribers>
+                element:<AdminRoute><AllSubscribers></AllSubscribers></AdminRoute>
             },
             {
                 path:'trainers',
-                element:<AllTrainers></AllTrainers>
+                element:<AdminRoute><AllTrainers></AllTrainers></AdminRoute>
             },
             {
                 path:'appliedTrainer',
-                element:<AppliedTrainer></AppliedTrainer>
+                element:<AdminRoute><AppliedTrainer></AppliedTrainer></AdminRoute>
             },
             {
                 path:'balance',
-                element:<Balance></Balance>
+                element:<AdminRoute></AdminRoute>
             },
 
             // admin and trainer common route
