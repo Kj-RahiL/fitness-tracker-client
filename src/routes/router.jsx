@@ -20,6 +20,8 @@ import AddNewClass from "../Pages/Dashboard/Trainer/AddNewClass";
 import ActivityLogs from "../Pages/Dashboard/Users/ActivityLogs";
 import ProfileSettings from "../Pages/Dashboard/Users/ProfileSettings";
 import RecommendedClass from "../Pages/Dashboard/Users/RecommendedClass";
+import AvailableTrainer from "../Pages/Trainer/availableTrainer/AvailableTrainer";
+import BookedPrice from "../Pages/Trainer/availableTrainer/BookedPrice";
 
 const router = createBrowserRouter([
     {
@@ -41,6 +43,15 @@ const router = createBrowserRouter([
             {
                 path: 'trainer/beTrainer',
                 element: <BeTrainer></BeTrainer>
+            },
+            {
+                path: 'trainer/availableTrainer/:id',
+                element: <AvailableTrainer></AvailableTrainer>,
+                loader: ({params})=> fetch(`http://localhost:5000/trainer/${params.id}`)
+            },
+            {
+                path: 'trainer/availableTrainer/:id/bookedPrice',
+                element: <BookedPrice></BookedPrice>
             },
             {
                 path: 'classes',

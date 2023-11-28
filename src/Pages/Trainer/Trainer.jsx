@@ -7,14 +7,21 @@ import TrainerCard from "./TrainerCard";
 import beTrainerImage from '../../assets/trainer/team-1.jpg'
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import OurPlans from "../Dashboard/Trainer/OurPlans";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import { useQuery } from "@tanstack/react-query";
 
 const Trainer = () => {
-    const [items, setItems] = useState([])
-    useEffect(() => {
-        fetch('/teams.json')
-            .then(res => res.json())
-            .then(data => setItems(data))
-    }, [])
+    
+    const axiosPublic = useAxiosPublic()
+    const {data: items = []}= useQuery({
+        queryKey: ['items'],
+        queryFn: async()=>{
+            const res = await axiosPublic.get('/trainer')
+            return res.data
+        }
+    })
+    console.log(items)
 
     return (
         <div>
@@ -25,7 +32,7 @@ const Trainer = () => {
             <div className="py-20 bg-cover" style={{ backgroundImage: `url(${background})` }}>
                 <div className="grid grid-cols-3 gap-10 mx-5">
                     {
-                        items.map(item => <TrainerCard key={item.id} item={item}></TrainerCard>)
+                        items.map(item => <TrainerCard key={item._id} item={item}></TrainerCard>)
                     }
                 </div>
             </div>
@@ -41,6 +48,9 @@ const Trainer = () => {
                     </Link>
                 </div>
             </div>
+
+            {/* booked trainer */}
+            <OurPlans></OurPlans>
         </div>
     );
 };
