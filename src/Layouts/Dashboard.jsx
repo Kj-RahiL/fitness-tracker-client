@@ -4,18 +4,21 @@ import { MdAddChart, MdClass, MdGroup, MdManageAccounts, MdSettings, MdUnsubscri
 import { RxActivityLog } from "react-icons/rx";
 import { NavLink, Outlet } from "react-router-dom";
 import UseAdmin from "../hooks/useAdmin";
+import useTrainer from "../Hooks/useTrainer";
 
 
 const Dashboard = () => {
     // const [isAdmin] = UseAdmin()
     const [isAdmin] = UseAdmin();
-    const isTrainer = false
+    const [isTrainer] = useTrainer()
     return (
         <div className="flex">
             <div className="bg-gradient-to-r from-black from-10% via-amber-500 via-30% to-emerald-500 to-90% ..."></div>
             {/* dashboard sidebar */}
             <div className="w-64 min-h-screen bg-gradient-to-r from-black  via-amber-500 via-30% to-black text-gray-100">
-                {isTrainer ? "Trainer " : isAdmin ? 'Admin' : 'Member'}
+                <div className="text-center underline font-semibold text-gray-700">
+                    {isTrainer ? "Trainer DashBoard " : isAdmin ? 'Admin Dashboard' : 'Member Dashboard'}
+                </div>
                 <ul className="menu p-4 text-md font-semibold">
                     {
                         isAdmin ? <>
