@@ -33,7 +33,7 @@ const AvailableTrainer = () => {
                                         <td>9:00 Am - 10:00 am</td>
                                         <td>{name}</td>
                                         <td>
-                                            <Link to='bookedPrice'>
+                                            <Link to='/bookedPrice'>
                                                 <button className="btn btn-outline bg-amber-700 text-white">Join Now</button>
                                             </Link>
                                         </td>

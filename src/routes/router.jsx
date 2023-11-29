@@ -55,7 +55,7 @@ const router = createBrowserRouter([
                 loader: ({params})=> fetch(`http://localhost:5000/trainer/${params.id}`)
             },
             {
-                path: 'trainer/availableTrainer/:id/bookedPrice',
+                path: '/bookedPrice',
                 element: <PrivateRoute><BookedPrice></BookedPrice></PrivateRoute>
             },
             {
@@ -78,7 +78,7 @@ const router = createBrowserRouter([
     },
     {
         path: '/dashboard',
-        element: <Dashboard></Dashboard>,
+        element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
         errorElement:<ErrorElement></ErrorElement>,
         children:[
             // admin route

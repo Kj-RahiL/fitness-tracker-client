@@ -3,7 +3,7 @@ import Cover from "../../../Components/Shared/Cover";
 import useAuth from "../../../Hooks/useAuth";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
-import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_API
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
@@ -11,8 +11,7 @@ const BeTrainer = () => {
     const { user } = useAuth()
     const { register, handleSubmit, reset } = useForm()
     const axiosPublic = useAxiosPublic()
-    const axiosSecure = useAxiosSecure
-    ()
+    const axiosSecure = useAxiosSecure()
 
     const onSubmit = async (data) => {
         const imageFile = { image: data.image[0] }

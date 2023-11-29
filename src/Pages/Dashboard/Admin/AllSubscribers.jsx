@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import Title from "../../../Components/Shared/Title";
-import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 // import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 
 

@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import Title from "../../../Components/Shared/Title";
+import { Link } from "react-router-dom";
 
 
 const AllTrainers = () => {
@@ -25,6 +26,7 @@ const AllTrainers = () => {
                         <th></th>
                         <th>Name</th>
                         <th>email</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -33,6 +35,7 @@ const AllTrainers = () => {
                         <th>{index+1}</th>
                         <td>{trainer.name}</td>
                         <td>{trainer.email}</td>
+                        <td><Link><button>pay</button></Link></td>
                     </tr>)
                     }
                 </tbody>
