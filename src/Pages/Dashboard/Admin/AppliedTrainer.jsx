@@ -1,10 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 import Title from "../../../Components/Shared/Title";
-import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
-import { toast } from "react-toastify";
 import AppliedTrainerTab from "./AppliedTrainerTab";
 import { useNavigate } from "react-router-dom";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 
 
 const AppliedTrainer = () => {
@@ -18,15 +17,7 @@ const AppliedTrainer = () => {
         }
     })
     // const filter = beTrainers.filter(item=> item._Id === )
-    const handleConfirm = id => {
-        const users = beTrainers.find(user => user._id === id)
-        const userInfo = {
-            name: users.name,
-            email: users.email,
-            photo: users.image,
-            role: 'trainer'
-        }
-        // 
+    const handleConfirm = users => {
         const trainerInfo = {
             name: users.name,
             email: users.email,
@@ -34,41 +25,35 @@ const AppliedTrainer = () => {
             category: users.category,
             experienceYears: users.experienceYears,
             availableWeek: users.availableWeek,
-            availableDay: users.availableDay, 
+            availableDay: users.availableDay,
         }
-       
-        axiosSecure.post('/trainer', trainerInfo)
-        .then(res => {
-            if (res.data.insertedId) {
-                console.log('user add database', res.data)
-                Swal.fire({
-                    position: "center-start",
-                    icon: "success",
-                    title: `user add trainer page .`,
-                    showConfirmButton: false,
-                    timer: 500
-                });
-            }
-        })
-
-        axiosSecure.post('/users', userInfo)
+        axiosSecure.patch(`/users/trainer/${users.email}`)
             .then(res => {
-                if (res.data.insertedId) {
-                    console.log('user add database', res.data)
-                    toast.success(`Congrats!${res.data.name} is now trainer`)
-                    axiosSecure.delete(`/beTrainer/${id}`)
+                if (res.data.modifiedCount > 0) {
+                    axiosSecure.post('/trainer', trainerInfo)
                         .then(res => {
-                            if (res.data.deletedCount > 0) {
-                                refetch()
-                                navigate('/dashboard')
+                            if (res.data.insertedId) {
+                                axiosSecure.delete(`/beTrainer/${users._id}`)
+                                    .then(res => {
+                                        if (res.data.deletedCount > 0) {
+                                            Swal.fire({
+                                                position: "center-start",
+                                                icon: "success",
+                                                title: `${users.name} is an trainer Now.!!`,
+                                                showConfirmButton: false,
+                                                timer: 1500
+                                            });
+                                            refetch()
+                                            navigate('/dashboard')
+                                        }
+                                    })
                             }
-                        })
-                        .catch(error => {
-                            console.error(error)
                         })
                 }
             })
+
     }
+
     const handleDelete = id => {
         axiosSecure.delete(`/beTrainer/${id}`)
             .then(res => {
@@ -80,7 +65,7 @@ const AppliedTrainer = () => {
                         text: "The user has been deleted.",
                         icon: "success",
                         showConfirmButton: false,
-                        timer: 1500
+                        timer: 2000
                     });
                 }
             })
@@ -88,6 +73,8 @@ const AppliedTrainer = () => {
                 console.error(error)
             })
     }
+
+
     return (
         <div>
             <Title title='applied trainer'></Title>

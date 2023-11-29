@@ -36,7 +36,7 @@ const AppliedTrainerTab = ({beTrainer, index, handleConfirm, handleDelete}) => {
                                 </div>
                                 <h2 className="card-title text-xl">{beTrainer.category}</h2>
                                 <div className="flex justify-between">
-                                    <button onClick={() => handleConfirm(beTrainer._id)} className="btn px-4 bg-amber-500 text-white mt-10">Confirm</button>
+                                    <button onClick={() => handleConfirm(beTrainer)} className="btn px-4 bg-amber-500 text-white mt-10">Confirm</button>
                                     <button onClick={() => handleDelete(beTrainer._id)} className="btn px-4  bg-amber-500 text-white mt-10">Reject</button>
                                 </div>
                             </div>

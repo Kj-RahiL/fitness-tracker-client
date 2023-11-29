@@ -25,6 +25,7 @@ import BookedPrice from "../Pages/Trainer/availableTrainer/BookedPrice";
 import ErrorElement from "../Pages/ErrorElement/ErrorELement";
 import PrivateRoute from "./PrivateRoute";
 import AdminRoute from "./AdminRoute";
+import TrainerRoute from "./TrainerRoute";
 
 const router = createBrowserRouter([
     {
@@ -107,15 +108,15 @@ const router = createBrowserRouter([
             // trainer route
             {
                 path:'manageSlots',
-                element:<ManageSlots></ManageSlots>
+                element:<TrainerRoute><ManageSlots></ManageSlots></TrainerRoute>
             },
             {
                 path:'manageMembers',
-                element:<ManageMember></ManageMember>
+                element:<TrainerRoute><ManageMember></ManageMember></TrainerRoute>
             },
             {
                 path:'addNewClass',
-                element:<AddNewClass></AddNewClass>
+                element:<TrainerRoute><AddNewClass></AddNewClass></TrainerRoute>
             },
 
             // members

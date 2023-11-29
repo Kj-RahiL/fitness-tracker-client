@@ -9,9 +9,9 @@ const AvailableTrainer = () => {
         <div>
             <Title title='Available Trainer'></Title>
             <div className="my-20">
-                <div className="card w-full bg-black text-white shadow-md shadow-amber-500 flex-col lg:flex-row">
-                    <figure className="h-[520px]"><img className="h-full w-full" src={image} alt="Shoes" /></figure>
-                    <div className="ml-20">
+                <div className="card w-full grid grid-cols-3 bg-black text-white shadow-md shadow-amber-500 flex-col lg:flex-row">
+                    <figure className="h-[520px] "><img className="h-full w-full" src={image} alt="Shoes" /></figure>
+                    <div className="col-span-2">
                         <h2 className="text-4xl font-bold uppercase text-center">Available Time Slot</h2>
                         <div className="overflow-x-auto w-full ml-10">
                             <table className="table ">

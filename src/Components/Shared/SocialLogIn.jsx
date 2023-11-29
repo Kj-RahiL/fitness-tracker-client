@@ -17,10 +17,10 @@ const SocialLogIn = () => {
                     email: res.user.email
                 }
                 axiosPublic.post('/users', userInfo)
-                            .then(res => {
-                                console.log(res.data)
-                                navigate('/');
-                            })
+                    .then(res => {
+                        console.log(res.data)
+                        navigate('/');
+                    })
             })
     }
 
