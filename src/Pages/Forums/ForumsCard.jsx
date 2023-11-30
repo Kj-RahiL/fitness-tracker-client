@@ -6,7 +6,7 @@ const ForumsCard = ({ forum }) => {
         <div className="card w-full bg-black text-white shadow-md shadow-amber-500">
             <figure className="h-[300px]"><img className="h-full w-full" src={image} alt="Shoes" /></figure>
             <div className="card-body">
-                <div className="flex justify-between -mt-5 mb-5">
+                <div className="flex flex-wrap justify-between -mt-5 mb-5">
                     {
                         badge == "admin" ? <h3 className="items-center border border-green-400 px-1 rounded text-green-700">{badge}</h3>
                             : <h3 className="items-center border border-green-400 rounded px-1  text-green-700">{badge}</h3>
