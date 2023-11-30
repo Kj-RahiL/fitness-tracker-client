@@ -64,7 +64,7 @@ const router = createBrowserRouter([
             },
             {
                 path: 'forums',
-                element:<Forums></Forums>
+                element: <Forums></Forums>
             },
         ]
     },

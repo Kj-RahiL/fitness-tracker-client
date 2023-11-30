@@ -3,7 +3,7 @@ import { FaBorderStyle, FaCalendar } from "react-icons/fa";
 
 
 const BlogCard = ({blog}) => {
-    const {title, date, image, content, author} = blog
+    const {title, date, image, author} = blog
     return (
         <div className="card w-full bg-black text-white shadow-md shadow-amber-500">
             <figure className="h-[300px]"><img className="h-full w-full" src={image} alt="Shoes" /></figure>

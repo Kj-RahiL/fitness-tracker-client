@@ -22,12 +22,11 @@ const AllClasses = () => {
         <div className="my-20">
             <Title title='our all classes'></Title>
             <div className="py-20 bg-cover" style={{ backgroundImage: `url(${background})` }}>
-                <h2 className="text-5xl text-center font-bold text-white mb-16">Awesome Features</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-5 gap-8">
                     {
                         classes?.map(item => <div key={item._id} className="card  bg-black text-white shadow-md shadow-amber-500">
                             <figure className="px-10 pt-10 h-[220px]">
-                                <img src={item.icon} alt="Shoes" className="rounded-xl h-full" />
+                                <img src={item.image} alt="Shoes" className="rounded-xl h-full" />
                             </figure>
                             <div className="card-body items-center text-center">
                                 <h2 className="card-title text-2xl font-bold">{item.className}</h2>

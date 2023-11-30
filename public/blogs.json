@@ -4,6 +4,7 @@
       "title": "Top 10 Fitness Tips for a Healthy Lifestyle",
       "date": "2023-11-25",
       "author": "FitnessExpert123",
+      "badge": "admin",
       "image": "https://i.ibb.co/mNcm3hn/blog1.jpg",
       "content": "Discover the best fitness tips to kickstart your healthy lifestyle journey. From effective workout routines to nutrition advice, learn how to achieve your fitness goals and maintain a balanced lifestyle."
     },
@@ -12,6 +13,7 @@
       "title": "Essential Nutrients Your Body Needs for Optimal Performance",
       "date": "2023-11-26",
       "author": "NutritionGuru",
+      "badge": "admin",
       "image": "https://i.ibb.co/D1vPX4f/blog2.jpg",
       "content": "Explore the key nutrients your body requires for peak performance. Learn about the importance of a well-balanced diet, including proteins, carbohydrates, fats, vitamins, and minerals, to support your fitness journey."
     },
@@ -20,6 +22,7 @@
       "title": "Cardiovascular Exercises for Maximum Fat Burn",
       "date": "2023-11-27",
       "author": "CardioMaster",
+      "badge": "",
       "image": "https://i.ibb.co/5nkJ9yQ/blog3.jpg",
       "content": "Uncover the best cardio workouts to boost your metabolism and burn fat effectively. Whether you prefer running, cycling, or high-intensity interval training (HIIT), find the perfect cardio routine for your fitness level."
     },
@@ -28,6 +31,7 @@
       "title": "Mindful Movement: Incorporating Mindfulness into Your Workouts",
       "date": "2023-11-28",
       "author": "MindfulFitness",
+      "badge": "trainer",
       "image": "https://i.ibb.co/cLhrw00/blog4.jpg",
       "content": "Learn how to bring mindfulness into your fitness routine. Discover the benefits of mindful movement, meditation, and breathing exercises to enhance your overall well-being and make your workouts more enjoyable."
     },
@@ -36,6 +40,7 @@
       "title": "Beginner's Guide to Strength Training: Building Muscle Safely",
       "date": "2023-11-29",
       "author": "StrengthEnthusiast",
+      "badge": "admin",
       "image": "https://i.ibb.co/mcGNQmw/blog5.jpg",
       "content": "If you're new to strength training, this guide is for you. Explore the fundamentals of weightlifting, resistance training, and proper form. Start building muscle and increasing strength with confidence."
     },
@@ -44,6 +49,7 @@
       "title": "The Importance of Recovery: Rest Days and Active Recovery",
       "date": "2023-11-30",
       "author": "RecoveryPro",
+      "badge": "trainer",
       "image": "https://i.ibb.co/SsSJ8Bj/blog6.jpg",
       "content": "Understand the significance of recovery in your fitness journey. Explore the benefits of rest days and active recovery strategies to prevent burnout, reduce the risk of injury, and optimize your overall performance."
     }

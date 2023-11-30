@@ -62,7 +62,7 @@ const Navbar = () => {
                 };
             }}>Dashboard</NavLink>
         </li>
-        <li><NavLink to="/community"
+        <li><NavLink to="/forums"
             style={({ isActive }) => {
                 return {
                     color: isActive ? '#F4AF00' : '',
@@ -70,7 +70,7 @@ const Navbar = () => {
                     fontWeight: isActive ? "bold" : "",
                     background: isActive ? "none" : '',
                 };
-            }}>Community</NavLink>
+            }}>Forums</NavLink>
         </li>
     </>
 
