@@ -5,7 +5,7 @@ import ForumsCard from "./ForumsCard";
 
 const Forums = () => {
     const axiosPublic = useAxiosPublic()
-    const { data: forums = [] } = useQuery({
+    const { data: forums = [], refetch } = useQuery({
         queryKey: ['forums'],
         queryFn: async () => {
             const res = await axiosPublic.get('/forum')
@@ -13,7 +13,7 @@ const Forums = () => {
             return res.data
         }
     })
-    console.log(forums)
+    // console.log(forums)
 
     return (
         <div>
@@ -21,7 +21,7 @@ const Forums = () => {
             <h2 className="text-center text-5xl font-bold my-8 text-white">OUR LATEST BLOG</h2>
             <div className="grid grid-cols-3 gap-10 mx-5">
                 {
-                    forums.map(forum=><ForumsCard key={forum._id} forum={forum}></ForumsCard>)
+                    forums.map(forum=><ForumsCard key={forum._id} forum={forum} refetch={refetch }></ForumsCard>)
                 }
             </div>
         </div>

@@ -6,18 +6,17 @@ import UseAdmin from "../../../hooks/useAdmin";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import Swal from "sweetalert2";
-import { useState } from "react";
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_API
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 const AddNewForum = () => {
-    const isAdmin = UseAdmin()
-    const isTrainer = useTrainer()
+    const [isAdmin] = UseAdmin()
+    const [isTrainer] = useTrainer()
     const { user } = useAuth()
     const { register, handleSubmit, reset } = useForm()
     const axiosSecure = useAxiosSecure()
     const axiosPublic = useAxiosPublic()
-
+console.log('hey',isAdmin)
     const onSubmit = async(data )=> {
         const imageFile = { image: data.image[0] }
         const res = await axiosPublic.post(image_hosting_api, imageFile, {
@@ -81,7 +80,7 @@ const AddNewForum = () => {
                             <label className="input-group">
                                 <input type="text"
                                     {...register("badge", { required: true })}
-                                    value={isAdmin === true? "admin" : isTrainer === true ? "trainer" : "trainer"}
+                                    value={isAdmin ? "admin" : isTrainer ? 'trainer' :' ' }
                                     readOnly
                                     className="input input-bordered w-full" />
                             </label>

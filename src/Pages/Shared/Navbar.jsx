@@ -107,11 +107,11 @@ const Navbar = () => {
                 {
                     user ?
                         <div className="dropdown dropdown-end flex">
-                            <label tabIndex={0} className=" rounded-btn btn-ghost flex">
-                            <h2 className="text-base font-light px-4 py-1 hover:bg-[#F4AF00] mr-2 rounded">{user?.displayName} </h2>
+                            <label tabIndex={0} className="btn bg-transparent flex">
+                                <h2 className="text-white font-light px-4 py-1 hover:bg-[#F4AF00] mr-2 rounded">{user?.displayName} </h2>
                                 <img className="w-8 rounded-full " src={user?.photoURL ? user?.photoURL : avatar} alt="" />
                             </label>
-                            <ul tabIndex={0} className="menu dropdown-content z-[1] p-4 shadow border-2 text-white bg-blend-overlay rounded-box mt-4">
+                            <ul tabIndex={0} className="menu dropdown-content z-[1] p-4 shadow border-2 text-white bg-blend-overlay rounded-box mt-10">
                                 <li><button onClick={handleLogout} className="btn btn-ghost hover:bg-[#F4AF00] normal-case font-semibold">SignOut</button></li>
                             </ul>
                         </div> :
