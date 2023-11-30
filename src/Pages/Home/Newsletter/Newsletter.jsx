@@ -22,9 +22,9 @@ const Newsletter = () => {
     }
     return (
         <div className="bg-neutral-950 py-20">
-            <h2 className="text-center text-5xl font-bold my-8 text-white uppercase">Newsletter</h2>
-            <div className='grid grid-cols-2 gap-10'>
-                <img src={image} alt="" />
+            <h2 className="text-center text-3xl md:text-5xl font-bold my-8 text-white uppercase">Newsletter</h2>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
+                <img className='hidden md:block' src={image} alt="" />
                 <form onSubmit={handleSubmit(onSubmit)} className="card-body flex justify-center items-center">
                     <div className="form-control">
                         <label className="label">

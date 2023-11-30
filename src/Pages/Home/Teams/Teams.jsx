@@ -33,7 +33,7 @@ const Teams = () => {
             >
                 {
                     items.map(item => <SwiperSlide key={item.id}>
-                        <div className="card w-96 bg-black text-white shadow-md shadow-amber-500 relative overflow-hidden">
+                        <div className="card bg-black text-white shadow-md shadow-amber-500 relative overflow-hidden">
                             <figure className="h-[576px]">
                                 <img src={item.image} alt="Shoes" className="rounded-xl h-full" />
                             </figure>

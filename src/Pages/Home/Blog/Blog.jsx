@@ -12,7 +12,7 @@ const Blog = () => {
     return (
         <div className="py-20 bg-cover" style={{ backgroundImage: `url(${background})`}}>
             <h2 className="text-center text-5xl font-bold my-8 text-white">OUR LATEST BLOG</h2>
-            <div className="grid grid-cols-3 gap-10 mx-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mx-5">
                 {
                     blogs.map(blog=><BlogCard key={blog.id} blog={blog}></BlogCard>)
                 }
