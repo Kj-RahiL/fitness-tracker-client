@@ -11,7 +11,7 @@ const AllSubscribers = () => {
         queryKey: ['subscriber'],
         queryFn: async()=>{
             const res = await axiosSecure.get('/subscribe')
-            console.log(res.data)
+            // console.log(res.data)
             return res.data
         }
     })

@@ -1,9 +1,38 @@
-
+import { useQuery } from "@tanstack/react-query";
+import Title from "../../../Components/Shared/Title";
+import useAxiosPublic from "../../../Hooks/useAxiosPublic";
+import background from '../../../assets/Home/mesh-814.png'
 
 const RecommendedClass = () => {
+    const axiosPublic = useAxiosPublic()
+    const { data: classes = [] } = useQuery({
+        queryKey: ['classes'],
+        queryFn: async () => {
+            const res = await axiosPublic.get('/addClass')
+            console.log(res.data)
+            return res.data
+        }
+    })
     return (
         <div>
-            <h2>Recommended Class</h2>
+            <Title title='Recommended Class'></Title>
+            <div className="py-20 bg-cover" style={{ backgroundImage: `url(${background})` }}>
+                <div className="grid grid-cols-1 md:grid-cols-2 my-5 gap-8">
+                    {
+                        classes?.map(item => <div key={item._id} className="card  bg-black text-white shadow-md shadow-amber-500">
+                            <figure className="px-10 pt-10 h-[220px]">
+                                <img src={item.image} alt="Shoes" className="rounded-xl h-full" />
+                            </figure>
+                            <div className="card-body items-center text-center">
+                                <h2 className="card-title text-2xl font-bold">{item.className}</h2>
+                                <p className="card-title text-gray-400">{item.weekDays}, {item.time}</p>
+                                <p className="text-base text-gray-400">{item.description}</p>
+                            </div>
+                        </div>)
+                    }
+                </div>
+
+            </div>
         </div>
     );
 };

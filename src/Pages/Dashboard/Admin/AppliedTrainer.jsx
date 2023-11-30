@@ -26,7 +26,9 @@ const AppliedTrainer = () => {
             experienceYears: users.experienceYears,
             availableWeek: users.availableWeek,
             availableDay: users.availableDay,
+            salary: 650,
         }
+        console.log(trainerInfo)
         axiosSecure.patch(`/users/trainer/${users.email}`)
             .then(res => {
                 if (res.data.modifiedCount > 0) {

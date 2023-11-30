@@ -1,9 +1,10 @@
+import Title from "../../../Components/Shared/Title";
 
 
 const ActivityLogs = () => {
     return (
         <div>
-            <h2>Activity Logs</h2>
+            <Title title='activity logs'></Title>
         </div>
     );
 };

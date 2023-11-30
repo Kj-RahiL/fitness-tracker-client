@@ -5,7 +5,7 @@ import { AuthContext } from "../Providres/AuthProviders";
 
 
 const axiosSecure = axios.create({
-    baseURL: 'http://localhost:5000'
+    baseURL: 'https://fitness-tracker-server-mu.vercel.app'
 })
 const useAxiosSecure = () => {
     const navigate = useNavigate()
@@ -24,9 +24,9 @@ const useAxiosSecure = () => {
     axiosSecure.interceptors.response.use(function(response){
         return response
     }, async(error)=>{
-        console.log(error)
+        // console.log(error)
         const status = error.response.status
-         console.log('status in the interceptors', status)
+        //  console.log('status in the interceptors', status)
          if(status === 401 || status === 403){
             await logOut()
             navigate('/login')

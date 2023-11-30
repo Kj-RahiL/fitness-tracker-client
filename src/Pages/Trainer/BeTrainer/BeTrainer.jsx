@@ -4,6 +4,8 @@ import useAuth from "../../../Hooks/useAuth";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import UseAdmin from "../../../hooks/useAdmin";
+import useTrainer from "../../../Hooks/useTrainer";
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_API
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
@@ -12,6 +14,8 @@ const BeTrainer = () => {
     const { register, handleSubmit, reset } = useForm()
     const axiosPublic = useAxiosPublic()
     const axiosSecure = useAxiosSecure()
+    const [isAdmin] = UseAdmin()
+    const [isTrainer] = useTrainer()
 
     const onSubmit = async (data) => {
         const imageFile = { image: data.image[0] }
@@ -31,7 +35,9 @@ const BeTrainer = () => {
                 experienceYears: data.experience,
                 availableWeek: data.availableWeek,
                 availableDay: data.availableDay,
+                
             }
+            // console.log(trainerItem)
             const trainer = await axiosSecure.post('/beTrainer', trainerItem)
             console.log(trainer)
             if (trainer.data.insertedId) {
@@ -156,7 +162,11 @@ const BeTrainer = () => {
                             </label>
                         </div>
                     </div>
-                    <input className="btn btn-block normal-case hover:bg-[#f4af0075] bg-[#b48a22] text-white" type="submit" value="Apply" />
+                    {
+                        isAdmin || isTrainer ? <input className="btn btn-block btn-disabled normal-case hover:bg-[#f4af0075] bg-[#b48a22] text-white" type="submit" value="Apply" /> 
+                        : <input className="btn btn-block normal-case hover:bg-[#f4af0075] bg-[#b48a22] text-white" type="submit" value="Apply" />
+                    }
+                    
                 </form>
             </div>
 

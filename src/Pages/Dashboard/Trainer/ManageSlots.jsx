@@ -1,8 +1,9 @@
+import Title from "../../../Components/Shared/Title";
 
 const ManageSlots = () => {
     return (
         <div>
-            <h2>manage slots</h2>
+            <Title title='manage slots'></Title>
         </div>
     );
 };

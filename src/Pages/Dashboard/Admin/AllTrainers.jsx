@@ -10,7 +10,7 @@ const AllTrainers = () => {
         queryKey: ['trainers'],
         queryFn: async () => {
             const res = await axiosSecure.get('/trainer')
-            console.log(res.data)
+            // console.log(res.data)
             return res.data
         }
     })
@@ -24,6 +24,7 @@ const AllTrainers = () => {
                     <thead>
                         <tr className="text-amber-500 bg-neutral-950">
                             <th></th>
+                            <th>Image</th>
                             <th>Name</th>
                             <th>email</th>
                             <th>Salary</th>
@@ -34,6 +35,13 @@ const AllTrainers = () => {
                         {
                             trainers.map((trainer, index) => <tr key={index}>
                                 <th>{index + 1}</th>
+                                <th>
+                                    <div className="avatar">
+                                        <div className="mask mask-squircle w-24 h-20">
+                                            <img src={trainer.image} alt="Avatar Tailwind CSS Component" />
+                                        </div>
+                                    </div>
+                                </th>
                                 <td>{trainer.name}</td>
                                 <td>{trainer.email}</td>
                                 <td>{trainer.salary}</td>
