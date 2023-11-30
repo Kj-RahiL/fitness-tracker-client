@@ -20,7 +20,7 @@ const ProfileSettings = () => {
                     <h2 className="card-title text-2xl font-bold">Name: {user.displayName}</h2>
                     <p className="text-base text-gray-400">Email: {user.email}</p>
                 </div>
-                <Link className="flex justify-center"><button className="btn uppercase bg-amber-600 text-white  btn-outline">update profile</button></Link>
+                <Link  className="flex justify-center"><button className="btn uppercase bg-amber-600 text-white  btn-outline">update profile</button></Link>
             </div>
         </div>
     );

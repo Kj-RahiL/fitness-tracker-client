@@ -26,12 +26,13 @@ import ErrorElement from "../Pages/ErrorElement/ErrorELement";
 import PrivateRoute from "./PrivateRoute";
 import AdminRoute from "./AdminRoute";
 import TrainerRoute from "./TrainerRoute";
+import Payments from "../Pages/Dashboard/Payments/Payments";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Main></Main>,
-        errorElement:<ErrorElement></ErrorElement>,
+        errorElement: <ErrorElement></ErrorElement>,
         children: [
             {
                 path: '/',
@@ -52,7 +53,7 @@ const router = createBrowserRouter([
             {
                 path: 'trainer/availableTrainer/:id',
                 element: <PrivateRoute><AvailableTrainer></AvailableTrainer></PrivateRoute>,
-                loader: ({params})=> fetch(`https://fitness-tracker-server-mu.vercel.app/trainer/${params.id}`)
+                loader: ({ params }) => fetch(`https://fitness-tracker-server-mu.vercel.app/trainer/${params.id}`)
             },
             {
                 path: '/bookedPrice',
@@ -69,68 +70,72 @@ const router = createBrowserRouter([
         ]
     },
     {
-        path:'/login',
-        element:<Login></Login>
+        path: '/login',
+        element: <Login></Login>
     },
     {
-        path:'/signUp',
-        element:<SignUp></SignUp>
+        path: '/signUp',
+        element: <SignUp></SignUp>
     },
     {
         path: '/dashboard',
         element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
-        errorElement:<ErrorElement></ErrorElement>,
-        children:[
+        errorElement: <ErrorElement></ErrorElement>,
+        children: [
             // admin route
             {
-                path:'subscribers',
-                element:<AdminRoute><AllSubscribers></AllSubscribers></AdminRoute>
+                path: 'subscribers',
+                element: <AdminRoute><AllSubscribers></AllSubscribers></AdminRoute>
             },
             {
-                path:'trainers',
-                element:<AdminRoute><AllTrainers></AllTrainers></AdminRoute>
+                path: 'trainers',
+                element: <AdminRoute><AllTrainers></AllTrainers></AdminRoute>
             },
             {
-                path:'appliedTrainer',
-                element:<AdminRoute><AppliedTrainer></AppliedTrainer></AdminRoute>
+                path: 'appliedTrainer',
+                element: <AdminRoute><AppliedTrainer></AppliedTrainer></AdminRoute>
             },
             {
-                path:'balance',
-                element:<AdminRoute><Balance></Balance></AdminRoute>
+                path: 'balance',
+                element: <AdminRoute><Balance></Balance></AdminRoute>
+            },
+            {
+                path: 'payment/:trainerId',
+                element: <Payments></Payments>
             },
 
             // admin and trainer common route
             {
-                path:'addNewForum',
-                element:<AddNewForum></AddNewForum>
+                path: 'addNewForum',
+                element: <AddNewForum></AddNewForum>
             },
 
             // trainer route
             {
-                path:'manageSlots',
-                element:<TrainerRoute><ManageSlots></ManageSlots></TrainerRoute>
+                path: 'manageSlots',
+                element: <TrainerRoute><ManageSlots></ManageSlots></TrainerRoute>
             },
             {
-                path:'manageMembers',
-                element:<TrainerRoute><ManageMember></ManageMember></TrainerRoute>
+                path: 'manageMembers',
+                element: <TrainerRoute><ManageMember></ManageMember></TrainerRoute>
             },
             {
-                path:'addNewClass',
-                element:<TrainerRoute><AddNewClass></AddNewClass></TrainerRoute>
+                path: 'addNewClass',
+                element: <TrainerRoute><AddNewClass></AddNewClass></TrainerRoute>
             },
 
             // members
             {
-                path:'activityLogs',
-                element:<ActivityLogs></ActivityLogs>
+                path: 'activityLogs',
+                element: <ActivityLogs></ActivityLogs>
             },
             {
-                path:'profileSettings',
-                element:<ProfileSettings></ProfileSettings>
+                path: 'profileSettings',
+                element: <ProfileSettings></ProfileSettings>
             },
             {
-                path:'recommendedClass',
-                element:<RecommendedClass></RecommendedClass>
+                path: 'recommendedClass',
+                element: <RecommendedClass></RecommendedClass>
             }
         ]
     }
