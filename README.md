@@ -1,8 +1,12 @@
-# React + Vite
+# This Website Name Is -- FIT TO HIT
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+### live link: https://fitness-tracker-31dbe.web.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+#### Website Features
+- This is fitness tracker website application..!! This website have 3 type of people handling. They are admin, trainer and members..!!
+- Other's user can member. if he wanted to trainer he willed fill up applied from.
+- this website members can see his class, which class he wanted. IT's paid system. if he interest any class or hire trainer he can pay website service.
+- An Admin can his trainer monthly salary. And others managed.
+- the trainer have update class, posts blog, and others management system.

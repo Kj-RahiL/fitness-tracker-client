@@ -5,7 +5,7 @@ import { AuthContext } from "../Providres/AuthProviders";
 
 
 const axiosSecure = axios.create({
-    baseURL: 'http://localhost:5000'
+    baseURL: 'https://fitness-tracker-server-mu.vercel.app'
 })
 const useAxiosSecure = () => {
     const navigate = useNavigate()

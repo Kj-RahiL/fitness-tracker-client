@@ -5,6 +5,7 @@ import { RxActivityLog } from "react-icons/rx";
 import { NavLink, Outlet } from "react-router-dom";
 import UseAdmin from "../hooks/useAdmin";
 import useTrainer from "../Hooks/useTrainer";
+import { Helmet } from "react-helmet-async";
 
 
 const Dashboard = () => {
@@ -13,6 +14,9 @@ const Dashboard = () => {
     const [isTrainer] = useTrainer()
     return (
         <div className="flex">
+            <Helmet>
+                <title>FIT TO HIT | Dashboard</title>
+            </Helmet>
             <div className="bg-gradient-to-r from-black from-10% via-amber-500 via-30% to-emerald-500 to-90% ..."></div>
             {/* dashboard sidebar */}
             <div className="w-64 min-h-screen bg-gradient-to-r from-black  via-amber-500 via-30% to-black text-gray-100">

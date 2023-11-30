@@ -77,7 +77,10 @@ const Navbar = () => {
     const handleLogout = () => {
         logOut()
             .then(() => {
-                toast.success('logout successfully')
+                toast.success('logout successfully',{
+                    position: 'top-center',
+                    autoClose: 1500
+                })
             })
             .catch(error => {
                 console.error(error)

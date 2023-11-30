@@ -52,7 +52,7 @@ const router = createBrowserRouter([
             {
                 path: 'trainer/availableTrainer/:id',
                 element: <PrivateRoute><AvailableTrainer></AvailableTrainer></PrivateRoute>,
-                loader: ({params})=> fetch(`http://localhost:5000/trainer/${params.id}`)
+                loader: ({params})=> fetch(`https://fitness-tracker-server-mu.vercel.app/trainer/${params.id}`)
             },
             {
                 path: '/bookedPrice',

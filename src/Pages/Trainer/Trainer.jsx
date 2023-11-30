@@ -28,7 +28,7 @@ const Trainer = () => {
             </Helmet>
             <Cover text='Meet Our Experts' title='Trainer'></Cover>
             <div className="py-20 bg-cover" style={{ backgroundImage: `url(${background})` }}>
-                <div className="grid grid-cols-3 gap-10 mx-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mx-5">
                     {
                         items.map(item => <TrainerCard key={item._id} item={item}></TrainerCard>)
                     }
@@ -40,9 +40,9 @@ const Trainer = () => {
                 <img className="w-full max-h-[60vh]" src={beTrainerImage} alt="Slide 1" />
                 <div className="hero-overlay bg-[#000000] bg-opacity-80"></div>
                 <div className="space-y-6 w-3/4 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center">
-                    <h1 className="text-6xl font-bold mb-8">Become A Trainer</h1>
+                    <h1 className="text-3xl md:text-6xl font-bold mb-8">Become A Trainer</h1>
                     <Link to='beTrainer'>
-                        <button className='btn btn-lg uppercase text-neutral-200 bg-[#b68a1d] hover:bg-transparent py-3 px-8'>Join our team <FaArrowRight></FaArrowRight></button>
+                        <button className='btn  lg:btn-lg uppercase text-neutral-200 bg-[#b68a1d] hover:bg-transparent py-3 px-8'>Join our team <FaArrowRight></FaArrowRight></button>
                     </Link>
                 </div>
             </div>
